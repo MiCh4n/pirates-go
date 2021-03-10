@@ -1,1 +1,1 @@
-# pirates-go
+### Sample app to shwo kubernetes features
