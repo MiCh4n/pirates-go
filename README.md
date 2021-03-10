@@ -1,1 +1,1 @@
-### Sample app to shwo kubernetes features
+### Sample app to show kubernetes features
