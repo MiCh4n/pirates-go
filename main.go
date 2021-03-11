@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func pirate(w http.ResponseWriter, r *http.Request) {
@@ -14,9 +16,11 @@ func pirate(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	LISTEN_ADDR := os.Getenv("LISTEN_ADDRESS")
 	http.HandleFunc("/", pirate)
+	http.Handle("/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(LISTEN_ADDR, nil))
 }
 
 func main() {
+	fmt.Println("WORK")
 	handleRequests()
 }
