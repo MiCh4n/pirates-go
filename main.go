@@ -18,6 +18,5 @@ func handleRequests() {
 }
 
 func main() {
-	fmt.Println("WORK")
 	handleRequests()
 }
